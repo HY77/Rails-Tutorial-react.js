@@ -6,4 +6,8 @@
     <%= render "follow" %>
   <% end %>
   </div>
+  <%= react_component("follow_button",
+                      user: @user.attributes,
+                      relationship: current_user.active_relationships.find_by(
+                                    followed_id: @user.id)&.attributes) %>
 <% end %>
